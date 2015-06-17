@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>JS intro</title>
+
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    JS intro example
+  </header>
+  
+  <div class="box">
+    
+    <div class="icon"></div>
+    <div class="compass"></div>
+
+  </div>
+
+  <footer>
+    <p>Michal Klapal &copy; 2015</p>
+  </footer>
+
+  <script>
+  $('.box').mousemove(function(e){
+    var x = e.pageX - this.offsetLeft;
+    var y = e.pageY - this.offsetTop;
+
+    console.log(x + ' ' + y);
+
+    var iconX, iconY;
+    iconX = 250 + x*0.03*-1;
+    iconY = 250 + y*0.04*-1;
+
+    $('.icon').css('left', iconX);
+    $('.icon').css('top', iconY);
+    
+    var compassX, compassY;
+    compassX = 650 + x*0.005;
+    compassY = 150 + y*0.02*-1;
+
+    $('.compass').css('left', compassX);
+    $('.compass').css('top', compassY);
+
+  });
+  </script>
+
+</body>
+
+</html>
